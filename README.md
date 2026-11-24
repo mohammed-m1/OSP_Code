@@ -1,54 +1,80 @@
-# Explainable, purchase-cost-aware placement of pressure loggers (simulated leaks, benchmark networks)
+# OSP_Code
 
-South Australia-informed BENCHMARK study. It is NOT a model of SA Water's network.
+Simulate Leaks using the Leakg3pd generator, rebuilds a no-leak scenario for idealised baseline (LevelA) and estimates a realistic baseline (LevelB).
+Picks loggers between n = 1 to 8 using MIP, Greedy, Sensitivity-ranked and random.
+A scoring is done on the held out events to see if it detects leaks or not. The data scenarios is split into 2 where one is for using the algorithms to get the answer and the rest scenarios are there to test and score the candidate placements.
+Uses Hanoi network as main and secondary is Net3.
 
-## Run
-    python -m pip install -r requirements.txt
-    python src/main.py                    # tiny debugging network
-    python src/main.py --network Net1     # shows the mandatory device-range check (all junctions exceed 689 kPa)
-    python src/main.py --existing J6      # try a network that already has a logger at J6
-    python -m unittest discover -s tests -v
-
-## Layout
-    network/tiny_network.inp              debugging network (changes documented inside the file)
-    data/devices/pressure_logger_catalog.csv   sourced device price, range, accuracy, interval
-    data/provenance.csv                   where every sourced number came from
-    src/cost_func.py                      purchase cost only: C(S) = unit price x number of new loggers
-    src/scenario_runner.py                WNTRSimulator normal and leak runs (fresh model each time)
-    src/detection.py                      residual + persistence rule, device range check
-    src/placement_search.py               cheapest layout meeting a coverage target (exhaustive, small candidate lists)
-    src/explanations.py                   removal, uniqueness and replacement explanations
-    src/reporting.py                      plots, assumptions register, run metadata
-    results/<network>/                    everything produced by a run
-
-## What each result file is
-    scenarios.csv, detection_matrix.csv (scenario_id,candidate_id,detected,first_detection_time,max_residual,...),
-    range_check.csv, placement_results.csv, explanations.csv, assumptions_register.csv, run_metadata.csv,
-    pressure_residual_example.png, cost_vs_coverage.png, selected_layout.png
-
-## Not claimed
-Leak localisation, failure prevention, detection of all small leaks, measured false-alarm performance,
-SA Water pressure thresholds or procurement prices, utility approval of the logger.
+To run this:
+Use Linux or WSL. use "wsl --install" and reboot for it to start working.
+open project using "code <your path>/osp_research.
+use python 3.12.
+use wntr 1.2.0
+use numpy, pandas, scipy, matplotlib, six, networkx, setuptools<70.
 
 
-## LeakG3PD track (Steps 1 and 2) - added v0.3
-Needs the pinned environment in `requirements-leakg3pd.txt` (wntr 1.2.0). Details in `CHANGELOG.md`.
 
-    python src/run_steps_1_2.py --net-dir <folder containing Hanoi.inp and Scenario-1..7> --out results/leakg3pd/Hanoi
-    python src/run_steps_1_2.py --net-dir <Net3 folder> --out results/leakg3pd/Net3 [--time-budget 120]   # resumable
+Project folder setup:
+cd ~/osp_leak_project
 
-Scenario folders can be regenerated with `tools/` or, once available, taken from the published archive
-(file names are listed in `FILE_NAMES` at the top of `src/leakg3pd_io.py`).
-Run all tests with `python -m unittest discover -s tests` (use the pinned environment).
-Results: `results/leakg3pd/<network>/` (audit.csv, node_range_screen.csv, matched_reconstruction.csv, level_a_summary.csv,
-level_b_grid_development.csv, detector_settings_FROZEN.json, level_b_heldout.csv, sign_check_leaks.csv, example plot).
+python3 -m venv .venv
+
+source .venv/bin/activate     #repeat in every new terminal; prompt shows(.venv)
+
+pip install -r requirements-leakg3pd.txt
+
+python -c "import ntr,numpy,pandas;print(wntr.__version__,numpy.__version__,pandas.__version__)"   # must print: 1.2.0 1.26.4 2.1.4
+
+python -m unittest discover -s tests   # must end: Ran 81 tests ... OK ... For if code code is running without errors.
 
 
-## Reproducing the final Hanoi results (v1.0)
-Environment: `requirements-leakg3pd.txt` (wntr 1.2.0, numpy 1.26.4, pandas 2.1.4). One CPU is enough.
-1. Regenerate scenarios (or use the published archive once audited): see `tools/README.md`
-   (`python run_gen3.py Hanoi 365 1 1 37 ./out 215` style; seed 1; scenarios 1-37).
-2. `python src/run_steps_1_2.py --net-dir <Hanoi folder> --out results/leakg3pd/Hanoi [--time-budget 190]`  (resumable)
-3. `python src/run_step5_mdf.py --net-dir <Hanoi folder> --step12-out results/leakg3pd/Hanoi --out results/leakg3pd/Hanoi/final`
-4. `python src/run_steps_3_7.py --net-dir <Hanoi folder> --step12-out results/leakg3pd/Hanoi --out results/leakg3pd/Hanoi/final`
-5. `python -m unittest discover -s tests`
+
+Generating the Scenarios:
+git clone https://github.com/matheuspilotto/LeakG3PD ~/LeakG3PD
+
+cp tools/leakg3pd_gen_linux.py tools/run_gen3.py 
+~/LeakG3PD/LeakG3PD_Dataset_Generator_Py3/
+
+cd ~/LeakG3PD/LeakG3PD_Dataset_Generator_Py3
+
+python run_gen3.py Hanoi 365 1 1 37 ~/lg3data 100000
+
+python run_gen3.py "EPANET Net 3" 365 1 1 10 ~/lg3data 100000
+
+
+
+
+
+Run the analysis from the ~/osp_research venv active environment:
+cd ~/osp_leak_project && source .venv/bin/activate
+
+export LG3=~/lg3data
+
+python src/run_steps_1_2.py --net-dir "$LG3/Hanoi" --out results/leakg3pd/Hanoi            # ~10 min; resumable
+
+python src/run_step5_mdf.py --net-dir "$LG3/Hanoi" --step12-out 
+
+results/leakg3pd/Hanoi --out results/leakg3pd/Hanoi/final   # ~1 min
+
+python src/run_steps_3_7.py --net-dir "$LG3/Hanoi" --step12-out 
+results/leakg3pd/Hanoi --out results/leakg3pd/Hanoi/final   # ~2 min
+
+python src/run_steps_1_2.py --net-dir "$LG3/EPANET Net 3" --out 
+
+results/leakg3pd/Net3      # ~10-15 min. Do NOT run steps 3-7 on Net3 
+
+
+
+
+Where the reuslts are:
+in the ~results/leakg3pd/Hanoi
+containing figure and csv files.
+
+
+
+What each script foes:
+run_steps_1_2.py          Loads scenarios, screen nodes, rebuilds for Level A,                            builds estimated baseline for level B, scores                                   scenarios.
+
+run_step5_mdf.py          Minimum Detectable Flow for every sensor-leak pair                              for both levelA and LevelB.
+
+run_steps_3_7.py          Node detection matrices, n = 1 to 8 logger placements                           scoring, false-alarm checks, sensor explanations,                               coverage vs flow comaprision.
