@@ -1,0 +1,5 @@
+source_id,item,value,unit,label,url,accessed,notes
+B2-1,MadgeTech PR1000 0-300 PSIG price,1872.40,AUD ex GST,sourced,https://www.instrumentchoice.com.au/pr1000-data-logger-0-300-psig,2026-11-20,2059.64 inc GST on page
+B2-2,MadgeTech PR1000 accuracy by range,"+/-6 psi (300), +/-10 psi (500), +/-20 psi (1000 PSIA)",psi,sourced,https://www.madgetech.com/?p=16297,2026-11-20,manufacturer page; pct FS derived = 2.0%
+B2-3,EFENTO 0-2068 kPa variant price,no published price,,sourced,https://www.pacificsensortech.com.au/device-properties/bluetooth/efento-wireless-pipe-pressure-logger-bluetooth/,2026-11-20,'available on request'
+B2-4,Net3 simulated maximum pressure vs 2068 kPa range,948 kPa fits within 0-2068 kPa,kPa,derived,project progress note,2026-11-20,range check only

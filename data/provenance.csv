@@ -1,0 +1,10 @@
+source_id,item,value,unit,label,url,accessed,notes
+P1,Logger hardware price,726.36,AUD ex GST,sourced,https://www.pacificsensortech.com.au/device-properties/bluetooth/efento-wireless-pipe-pressure-logger-bluetooth/,2026-11-17,Product page; page metadata last updated 2026-09-17
+P2,Standard pressure range,0-689,kPa gauge,sourced,same as P1,2026-11-17,Higher range 0-2068 kPa on request with no published price
+P3,Accuracy,+/-0.25,% of full-scale output,sourced,same as P1,2026-11-17,About 1.72 kPa (0.176 m head) for the standard range. Instrument accuracy is NOT an alarm threshold
+P4,Measurement interval,1 minute to 10 days,configurable,sourced,same as P1,2026-11-17,
+P5,Memory,40000,measurements,sourced,same as P1,2026-11-17,At 5-minute sampling this is about 139 days of data
+P6,Gateway (LTE or Ethernet) - EXCLUDED from cost,332.50-355.23,AUD ex GST each,sourced,same as P1,2026-11-17,Listed on the product page; needed for remote monitoring; not in this study's cost
+P7,Cloud licence 5 year - EXCLUDED from cost,99.00,AUD per sensor,sourced,same as P1,2026-11-17,Listed on the product page; not in this study's cost
+P8,Traceable calibration certificate - EXCLUDED from cost,109.00,AUD,sourced,same as P1,2026-11-17,Listed on the product page; not in this study's cost
+P9,Head to pressure conversion,9.80665,kPa per m of water,derived,physics,,Water 1000 kg/m3 and g = 9.80665 m/s2

@@ -1,0 +1,36 @@
+fact,value,unit,page,note
+NETWORK: water mains length,"27,066",km,12,"'Correct as at July 2019'. Text also says 'more than 27,000 km' (p12, p21)."
+NETWORK: metro Adelaide mains,"more than 9,000",km,21,Approximate wording in report.
+NETWORK: country mains,"nearly 18,000",km,21,Approximate wording in report.
+NETWORK: new water mains installed 2018-19,"more than 58 (47+ metro, 11+ country)",km,21,
+NETWORK: sewerage mains,"8,977",km,12,Not used by this study.
+NETWORK: storage tanks,514,count,12,
+NETWORK: water pump stations,271,count,12,
+NETWORK: chlorine booster stations,89,count,12,
+NETWORK: water treatment plants,42,count,12,
+NETWORK: reservoirs and weirs,32,count,12,
+NETWORK: bores,187,count,12,
+NETWORK: water supplied per year,more than 220 billion,litres,12,
+CUSTOMERS: people served,more than 1.7 million,people,8,
+CUSTOMERS: customer water connections (headline),"709,407",connections,8,"DISCREPANCY: p12 gives 699,738 'water connections (inc meters)'. Report does not explain the gap; both kept."
+CUSTOMERS: water connections (assets page),"699,738",connections,12,See discrepancy note above.
+BREAKS: main breaks and leaks in 2018-19,"4,115",count (financial year),21,Financial year to 30 June 2019.
+"BREAKS: breaks per 100 km of main (BoM, 2017-18 report)",13.6 (national average 19.4),per 100 km,21,"Different year and source from the 4,115 count; do not mix."
+BREAKS: derived rate 2018-19,15.2,per 100 km,"21,12","DERIVED: 4,115 / 27,066 x 100 = 15.20. Report's own rate is for 2017-18, so not directly comparable."
+BREAKS: Athelstone has relatively high main-break rate,reactive clay soils plus high supply pressure from topography,qualitative,42,Context only. No leak sizes or flows reported.
+PRESSURE MGMT: Athelstone pressure modulating control station,"installed, with pressure and sound sensors; pressure held stable remotely at varying demand",qualitative,42,
+PRESSURE MGMT: Waikerie,specialised valves installed to better manage water pressure,qualitative,25,Works due complete 2019-20.
+SMART NETWORK: sensors fitted across four locations,"35 pressure sensors (incl. 15 transient loggers), 19 flow meters, 120 acoustic sensors, 2 water quality sensors",count,42,"Locations: Athelstone, North Adelaide, Penneshaw, Port Lincoln (p42). Only the pressure-sensor count is relevant to this study."
+SMART NETWORK: Adelaide CBD trial,"combines acoustic sensors, pressure and flow data, high-speed transient pressure sensors, smart meters, water quality sensors; $4 million trial",qualitative; AUD,43,Context for application only.
+SMART NETWORK: Penneshaw,about 300 smart meters (hourly data) plus two flow and pressure sensors,count,42,"Hourly reporting is for meters, not for network pressure loggers."
+TELEMETRY/SCADA: the terms 'SCADA' or 'telemetry',NOT FOUND in the report text,n/a,n/a,"Searched the whole provided text. Report mentions a remotely monitored system at Watinuma (p23) and an Operations Control Centre monitoring vehicle safety (p47), neither a network SCADA description."
+"PRESSURE LOGGER deployment practice, typical pressure ranges, alarm thresholds",NOT FOUND,n/a,n/a,Not in the report. Needed only as context; open question 5 in the progress note.
+WQ MONITORING: samples collected from drinking water supplies,"46,118",count,56,Also the number of health-related routine analytes at customer taps (p57-58).
+WQ MONITORING: statewide compliance with ADWG health parameters,99.92 (target 99.90),percent,"56,57",
+WQ MONITORING: E. coli free at customer taps,"99.99 statewide (10,560 analytes)",percent,57,
+WQ MONITORING: drinking water supply systems,"87 statewide (8 metro, 60 country, 19 remote)",count,57,
+WQ MONITORING: customer tap sample locations,"490 statewide (186 metro, 285 country, 19 remote)",count,57,
+WQ MONITORING: catchment-to-tap sample locations,"1,439 statewide (372 metro, 950 country, 117 remote)",count,57,
+WQ MONITORING: routine test analytes catchment to tap,"372,352 statewide",count,57,
+WQ MONITORING: laboratory,"Australian Water Quality Centre, ISO 9001 and NATA requirements",qualitative,57,
+WQ INCIDENTS: statewide notifications 2018-19,Priority Type 1: 1; Type 1: 24; Type 2: 54,count,59,Drinking water only.

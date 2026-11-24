@@ -1,0 +1,4 @@
+scenario,event,status,onset_day,nodes_detecting,nodes,first_delay_h,best_max_drop_m
+5,0,evaluated,287.5,0.0,21.0,,3.444
+6,0,NOT EVALUABLE: onset before baseline warm-up (day 21),,,,,
+7,0,evaluated,93.2,18.0,21.0,3.5,11.73

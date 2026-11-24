@@ -1,0 +1,15 @@
+setting,split,events,events_detected_by_any_candidate,mean_share_of_candidates_detecting
+A_1x,dev,24,24,0.922
+A_1x,held,20,20,0.8952
+A_2x,dev,24,22,0.875
+A_2x,held,20,19,0.8242
+A_5x,dev,24,21,0.7675
+A_5x,held,20,17,0.6887
+B_q0.99_k3,dev,21,18,0.7035
+B_q0.99_k3,held,19,15,0.5976
+B_q0.99_k4,dev,21,15,0.596
+B_q0.99_k4,held,19,13,0.5739
+B_q0.999_k3,dev,21,15,0.5484
+B_q0.999_k3,held,19,13,0.4686
+B_q0.999_k6,dev,21,13,0.4562
+B_q0.999_k6,held,19,12,0.399

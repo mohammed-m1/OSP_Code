@@ -1,0 +1,5 @@
+setting,k,dev_objective_events,n_equal_dev_objective_layouts,held_coverage_min,held_coverage_median,held_coverage_max,mip_layout_held_coverage
+A_1x,3,24.0,480,0.9,0.95,1.0,0.95
+A_1x,5,24.0,42435,0.9,0.95,1.0,0.95
+B_q0.99_k3,3,18.0,10,0.632,0.632,0.789,0.789
+B_q0.99_k3,5,18.0,3147,0.632,0.684,0.789,0.737

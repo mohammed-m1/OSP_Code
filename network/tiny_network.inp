@@ -1,0 +1,71 @@
+[TITLE]
+Tiny water distribution network - OSP proof of concept
+
+; Lines starting with a semicolon are comments.
+; With Units LPS, junction demands are in litres/second,
+; pipe lengths and elevations are in metres, and diameters are in mm.
+;
+; CHANGES FROM THE FIRST VERSION (made so leaks produce measurable pressure changes):
+;   1. Every base demand multiplied by 6 (e.g. J1 0.5 -> 3.0 L/s).
+;   2. Diameters reduced: P1 250->200, P2 and P3 200->150, P4 to P7 150->100 mm.
+;   Reason: with the original oversized pipes a 10 mm leak changed pressure by < 0.1 m,
+;   so no sensor could ever alarm. These are illustrative values, NOT measured utility data.
+;   Time steps changed to 5 minutes so detection timing has useful resolution.
+
+[JUNCTIONS]
+;ID   Elevation   BaseDemand   Pattern
+J1    20          3.0          DAILY
+J2    18          4.2          DAILY
+J3    16          3.6          DAILY
+J4    15          4.8          DAILY
+J5    14          3.0          DAILY
+J6    13          2.4          DAILY
+
+[RESERVOIRS]
+; R1 supplies water at a fixed total hydraulic head of 50 m.
+;ID   Head
+R1    50
+
+[PIPES]
+;ID   Start  End   Length  Diameter  Roughness  MinorLoss  Status
+P1    R1     J1    300     200       120        0          OPEN
+P2    J1     J2    250     150       120        0          OPEN
+P3    J2     J3    250     150       120        0          OPEN
+P4    J3     J4    250     100       120        0          OPEN
+P5    J4     J5    250     100       120        0          OPEN
+P6    J5     J6    250     100       120        0          OPEN
+P7    J2     J4    350     100       120        0          OPEN
+
+[PATTERNS]
+; Eight demand multipliers, each lasting three hours.
+; This is an illustrative pattern, not measured utility data.
+; Hours:  0-3  3-6  6-9  9-12  12-15  15-18  18-21  21-24
+DAILY     0.6  0.7  1.4  1.1   1.0    1.2    1.5    0.8
+
+[OPTIONS]
+Units      LPS
+Headloss   H-W
+Quality    NONE
+
+[TIMES]
+Duration             24:00
+Hydraulic Timestep    0:05
+Pattern Timestep      3:00
+Report Timestep       0:05
+
+[REPORT]
+Status     NO
+Summary    YES
+
+[COORDINATES]
+; Coordinates are for drawing the network, not computing pipe lengths.
+;Node   X     Y
+R1      0     50
+J1      10    40
+J2      20    30
+J3      30    20
+J4      30    35
+J5      40    25
+J6      50    15
+
+[END]

@@ -1,0 +1,33 @@
+{
+  "baseline": "frozen",
+  "q": 0.999,
+  "persistence": 6,
+  "accuracy_floor_m": 0.17564611768544813,
+  "train_days": 56,
+  "window_days": 28,
+  "guard_days": 7,
+  "selection_rule": "fa_median<=0.02 and fa_p90<=0.1 per node per day on development normal data; then most development events detected by any node; then node-event rate; then smaller k; then smaller q",
+  "thresholds_m": {
+    "40": 2.8128,
+    "60": 4.8967,
+    "208": 3.1513,
+    "209": 3.1614,
+    "211": 3.16,
+    "213": 3.1597,
+    "215": 3.1682,
+    "217": 3.1671,
+    "219": 3.1646,
+    "225": 3.1669,
+    "229": 3.157,
+    "231": 3.1573,
+    "237": 3.149,
+    "239": 3.0875,
+    "241": 3.0875,
+    "243": 3.0875,
+    "247": 3.0838,
+    "249": 3.0838,
+    "251": 3.0579,
+    "253": 3.0203,
+    "255": 3.0152
+  }
+}

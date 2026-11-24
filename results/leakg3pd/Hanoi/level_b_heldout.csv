@@ -1,0 +1,21 @@
+scenario,event,status,onset_day,nodes_detecting,nodes,first_delay_h,best_max_drop_m
+5,0,evaluated,100.5,31.0,31.0,1.0,21.615
+5,1,evaluated,360.7,4.0,31.0,1.0,41.836
+6,0,evaluated,118.0,31.0,31.0,1.0,59.584
+6,1,evaluated,301.5,0.0,31.0,,3.852
+7,0,evaluated,329.3,8.0,31.0,1.0,11.058
+24,0,evaluated,84.8,2.0,31.0,254.0,6.229
+25,0,evaluated,216.6,31.0,31.0,1.0,43.126
+26,0,evaluated,309.9,31.0,31.0,1.0,53.062
+27,0,evaluated,98.0,31.0,31.0,1.0,63.636
+28,0,evaluated,151.6,0.0,31.0,,6.628
+29,0,evaluated,46.5,31.0,31.0,1.0,58.48
+30,0,evaluated,248.6,31.0,31.0,1.0,23.704
+31,0,evaluated,61.4,31.0,31.0,3.5,12.709
+32,0,evaluated,97.1,0.0,31.0,,4.112
+33,0,evaluated,139.6,31.0,31.0,1.0,67.13
+34,0,evaluated,97.0,31.0,31.0,1.0,54.933
+35,0,evaluated,211.8,24.0,31.0,1.0,10.223
+36,0,evaluated,295.8,0.0,31.0,,6.381
+37,0,NOT EVALUABLE: onset before baseline warm-up (day 20),,,,,
+37,1,evaluated,165.5,4.0,31.0,0.5,5.908

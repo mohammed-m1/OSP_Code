@@ -1,0 +1,16 @@
+key,value
+python,3.12.16
+platform,Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+wntr,1.2.0
+numpy,1.26.4
+pandas,3.0.6
+simulator,wntr.sim.WNTRSimulator
+demand_model,DDA
+report_step_s,300
+discharge_coeff,0.75
+device,EFENTO_BT_689KPA
+device_price_accessed,2026-11-17
+scenarios_ok,36
+scenarios_flagged,0
+scenarios_failed,0
+random_seed,42

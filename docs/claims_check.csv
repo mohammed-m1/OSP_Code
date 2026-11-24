@@ -1,0 +1,8 @@
+claim,verdict,page,evidence_note
+Zhao used fast messy GA and demand-driven analysis,VERIFIED,610 (fmGA); 617 (demand-driven analysis),fmGA stated on 609-610; demand-driven analysis stated in conclusions.
+Zhao sets normal pressure difference to zero (identical daily pattern),VERIFIED,609,"Same diurnal pattern assumed, so normal pressure difference = 0 and threshold = sensor accuracy."
+Du ADT weighted by pipe length x diameter; optimiser NSDE,VERIFIED,7,Eq. 3 (weights l_j d_j) and Sec. 2.2.2 (NSDE). Source: Du et al. 2024 PDF uploaded by the project owner.
+Du used pressure-driven analysis (EPANET 2.2) and demand-adding leaks,VERIFIED,5-6,Demand-adding method p5; PDA with EPANET 2.2 built-in function p6.
+Du scope excludes incipient/minor leaks,VERIFIED,"3, 5",'does not address ... incipient leaks' p3; minor leaks excluded p5.
+Quintiliani normalises residual by leak magnitude and binarises with a threshold,VERIFIED,3,Eq. 1 and Eq. 2. Sign/absolute ambiguity flagged in paper_facts.csv.
+Quintiliani used emitter-based leaks and a single time step at 3 PM,VERIFIED,4; Table 1 p5,Also: 3 PM was the lowest daytime demand.

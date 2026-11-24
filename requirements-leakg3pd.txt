@@ -1,0 +1,9 @@
+# Environment for the LeakG3PD track (exact baseline reconstruction needs the dataset's WNTR version)
+wntr==1.2.0
+numpy==1.26.4
+pandas==2.1.4
+scipy
+matplotlib
+six
+networkx
+setuptools<70

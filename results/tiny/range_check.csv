@@ -1,0 +1,7 @@
+candidate_id,max_kpa,min_kpa,eligible,reason
+J1,290.8,269.2,True,
+J2,301.7,224.6,True,
+J3,319.1,222.9,True,
+J4,322.8,184.3,True,
+J5,325.9,128.1,True,
+J6,334.2,113.7,True,

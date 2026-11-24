@@ -1,0 +1,12 @@
+key,scenario,event,onset_day,split,kinds,start,evaluable_B,matched_max_drop_m,weak
+S2_E0,2,0,33.9,dev,big,1625,False,23.070770000000003,False
+S3_E0,3,0,9.4,dev,big,449,False,5.7288699999999935,False
+S4_E0,4,0,78.7,dev,small,3779,True,10.668309999999998,False
+S5_E0,5,0,287.5,held,small,13800,True,9.64891,False
+S6_E0,6,0,21.2,held,"big,small",1020,False,8.042459999999998,False
+S7_E0,7,0,93.2,held,"big,small",4472,True,20.440749999999998,False
+S8_E0,8,0,120.0,dev,big,5762,True,15.35107,False
+S8_E1,8,1,287.5,dev,big,13798,True,14.458370000000002,False
+S9_E0,9,0,165.6,dev,small,7949,True,14.334050000000005,False
+S9_E1,9,1,297.2,dev,small,14267,True,13.581650000000003,False
+S10_E0,10,0,272.4,dev,big,13074,True,8.66102,False

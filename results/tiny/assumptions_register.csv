@@ -1,0 +1,21 @@
+id,item,value,label,note
+price,Logger hardware price,AUD 726.36 ex GST,sourced,provenance P1
+range,Logger range,0-689 kPa gauge,sourced,provenance P2
+accuracy,Logger accuracy,+/-0.25% FSO = 1.72 kPa = 0.176 m,derived,provenance P3
+interval,Sampling interval,300 s (device allows 60-864000 s),assumed,within published range
+excluded,Costs NOT modelled,installation and fittings; travel and labour; gateway; cloud subscription; calibration certificate; maintenance; replacement; lifecycle discounting,assumed,scope decision: purchase cost only
+candidates,Candidate sites,all junctions not excluded by range; installation feasibility UNVERIFIED,assumed,hypothetical installation opportunities
+existing,Existing loggers,none,assumed,zero existing sensors
+leak_nodes,Leak locations,"J1,J2,J3,J4,J5,J6",assumed,junction leaks
+leak_sizes,Equivalent opening diameters,"[5, 10, 20] mm",assumed,NOT local measurements
+leak_start,Leak start times,"[6, 15] h",assumed,pattern-aligned
+leak_duration,Sustained leak duration,6 h,assumed,one duration
+discharge,Leak discharge coefficient,0.75,assumed,WNTR default
+solver,Hydraulic solver,"WNTRSimulator, DDA",assumed,same settings for normal and leak runs
+tau,Primary detection threshold,1.0 m head,assumed,"experimental setting, not an SA Water standard"
+tau_sens,Threshold sensitivity,"[0.25, 0.5, 1.0, 2.0] m",assumed,lower and higher thresholds
+persistence,Persistence rule,3 consecutive samples,assumed,experimental setting
+targets,Coverage targets,"[0.5, 0.75, 0.9, 1.0]",assumed,not utility requirements
+network,Network,tiny (tiny_network.inp),assumed,"time steps set to 300 s (file had hydraulic 300 s, report 300 s); demands and controls unchanged by code"
+baseline,Baseline,no-leak run of same model,assumed,residual = leak run - baseline run
+claims,NOT claimed,"leak localisation, failure prevention, detection of all small leaks, measured false alarms, SA Water network behaviour",assumed,scope

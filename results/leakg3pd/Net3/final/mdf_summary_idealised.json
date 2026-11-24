@@ -1,0 +1,16 @@
+{
+  "n_pairs":441,
+  "n_resolved":373,
+  "mean_minimum_detectable_flow_m3s":0.0169498006,
+  "upper_percentile":90,
+  "upper_percentile_flow_m3s":0.0085062714,
+  "unresolved_share":0.1541950113,
+  "non_monotonic_share":0.0,
+  "metric_name":"mean minimum detectable flow (unweighted; not Du et al.'s ADT)",
+  "threshold_m":0.176,
+  "seconds":67,
+  "status_counts":{
+    "resolved":373,
+    "above_range":68
+  }
+}
